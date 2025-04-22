@@ -122,6 +122,11 @@ export default function ContatoSuporte() {
                 Enviar mensagem
               </Button>
             </form>
+            <div className="text-center text-sm">
+              <Link href="/" className="text-navy-600 hover:underline">
+                Voltar para a página inicial
+              </Link>
+            </div>
           </CardContent>
         </Card>
       </div>
