@@ -44,14 +44,15 @@ export default function SignupPage() {
   const [error, setError] = useState("");
   const router = useRouter();
 
-  localStorage.removeItem("fixit_current_user");
-  localStorage.removeItem("fixit_user_id");
-
   useEffect(() => {
-    // Initialize default users
+    // Limpa dados do usuário logado
+    localStorage.removeItem("fixit_current_user");
+    localStorage.removeItem("fixit_user_id");
+  
+    // Inicializa usuários padrão
     initializeDefaultUsers();
-
-    // Check if user is already logged in
+  
+    // Verifica se o usuário já está logado
     const user = getCurrentUser();
     if (user) {
       router.push("/dashboard");
