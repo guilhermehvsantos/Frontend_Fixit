@@ -48,16 +48,16 @@ export default function ContatoSuporte() {
   return (
     <div className="flex min-h-screen flex-col bg-slate-50">
       {/* Bloco de logo */}
-      <div className="container flex h-20 items-center justify-center py-4">
-        <Link href="/" className="flex items-center gap-3">
+      <div className="container flex mt-8 h-28 items-center justify-center">
+        <Link href="/" className="flex items-center gap-4">
           <Image
             src="/images/LogoFixit.png"
             alt="FixIt Logo"
-            width={72}
-            height={72}
-            className="rounded-md"
+            width={112}
+            height={112}
+            className="rounded-xl"
           />
-          <span className="text-4xl font-extrabold text-navy-700">FixIt</span>
+          <span className="text-5xl font-extrabold text-navy-700">FixIt</span>
         </Link>
       </div>
 
