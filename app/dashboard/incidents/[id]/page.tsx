@@ -138,6 +138,7 @@ export default function IncidentDetailsPage() {
 
     try {
       const updatedIncident = await updateIncident(incident.id, {
+        tecnico: incident.tecnico,
         status: "solucionado",
         // Ensure the property exists in the type or remove it
         ...(incident.dataAtualizacao !== undefined && {
@@ -377,7 +378,7 @@ export default function IncidentDetailsPage() {
           <div className="flex gap-2">
             {canSolve &&
               (incident.status === "em_atendimento" ||
-                incident.status === "in_progress") && (
+                incident.tecnico?.name === currentUser?.name ) && (
                 <Dialog
                   open={confirmSolveOpen}
                   onOpenChange={setConfirmSolveOpen}
@@ -653,7 +654,7 @@ export default function IncidentDetailsPage() {
                 )}
 
                 {/* Assignment options */}
-                {canAssign && !incident.tecnico && (
+                {canAssign && !incident.tecnico && incident.status.toLowerCase() !== "solucionado" && (
                   <div className="mt-2 flex flex-col gap-2">
                     {isAdmin ? (
                       <Dialog
@@ -772,15 +773,6 @@ export default function IncidentDetailsPage() {
               </div>
             </CardContent>
           </Card>
-
-          {canSolve && (
-            <Button
-              className="bg-green-600 hover:bg-green-700 text-white"
-              onClick={handleSolveIncident}
-            >
-              Solucionar Chamado
-            </Button>
-          )}
         </div>
       </div>
     </>
