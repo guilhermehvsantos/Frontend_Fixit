@@ -44,7 +44,7 @@ export default function LandingPage() {
             <Link href="#pricing" className="text-sm font-medium text-slate-700 hover:text-navy-600">
               Preços
             </Link>
-            <Link href="#contact" className="text-sm font-medium text-slate-700 hover:text-navy-600">
+            <Link href="/contact" className="text-sm font-medium text-slate-700 hover:text-navy-600">
               Contato
             </Link>
           </nav>
